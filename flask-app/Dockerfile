@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.9.7 
 
 #specify work directory inside the container
 WORKDIR /usr/src/FlaskApp
