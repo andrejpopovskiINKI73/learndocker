@@ -1,16 +1,14 @@
 FROM python:3
 
-# set a directory for the app
-WORKDIR /usr/src/app
+#specify work directory inside the container
+WORKDIR /usr/src/FlaskApp
 
-# copy all the files to the container
+#copy the local files to the workdir
 COPY . .
 
-# install dependencies
+#--no-cache-dir for disableing cache, smaller image size
 RUN pip install --no-cache-dir -r requirements.txt
 
-# tell the port number the container should expose
 EXPOSE 5000
 
-# run the command
 CMD ["python", "./app.py"]
